@@ -23,13 +23,9 @@ import json
 #Реализовать функцию, которая сохранит данные в CSV-файл.
 
 def func_1():
-    with open("employees.json", 'r') as json_f, open("for_ex_8_CSV.csv", 'w') as csv_f:
+    with open("employees.json", 'r') as json_f, open("for_ex_8_CSV_for_func_1.csv", 'w') as csv_f:
         data = json.load(json_f)
-        # print(data)
-        for line in data:
-            print(line)
-            info = json.dumps(line)
-            csv_f.write(info)
+        json.dump(data, csv_f, indent=4, ensure_ascii=False )
 # func_1()
 
 
@@ -85,3 +81,4 @@ def func_2():
         print(f"После добавления в JSON-файле находится информация о {count} людях.")
 
 func_2()
+
